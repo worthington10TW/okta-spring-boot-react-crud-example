@@ -47,11 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/**/*.{js,html,css}").permitAll()
                 .antMatchers("/", "/api/user").permitAll()
-                .anyRequest().authenticated();/*
-            .and()
-                .requiresChannel()
-                .requestMatchers(r -> r.getHeader("x-forwarded-proto") != null)
-                .requiresSecure();*/
+                .anyRequest().authenticated();
     }
 
     @Bean
